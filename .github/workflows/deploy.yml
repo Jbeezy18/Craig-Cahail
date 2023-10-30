@@ -16,7 +16,5 @@ jobs:
           node-version: 18.17.1
       - name: Install dependencies
         run: npm install
-      - name: install nodemon
-        run: npm install -g nodemon
       - name: start
-        run: nodemon index.js
+        run: node index.js
