@@ -2,8 +2,11 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 
+const core = require("@actions/core");
+const github = require("@actions/github");
 const app = express();
 const port = 3000;
+
 
 app.use('/public', express.static("public"));
 app.use(bodyParser.urlencoded({extended: true }));
