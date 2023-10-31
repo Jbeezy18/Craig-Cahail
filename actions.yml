@@ -1,0 +1,7 @@
+name: 'run'
+description: 'run app'
+author: 'JberryStacks'
+
+runs:
+  using: node20
+  main: dist/index.js
