@@ -1,11 +1,9 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-import core from "@actions/core";
-import github from "@actions/github";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3030;
 
 
 app.use('/public', express.static("public"));
