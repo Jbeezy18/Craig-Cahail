@@ -13,8 +13,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 18.17.1
+          node-version: 20.9.0
       - name: Install dependencies
         run: npm install
       - name: start
-        run: npm start
+        run: node dist/index.js
