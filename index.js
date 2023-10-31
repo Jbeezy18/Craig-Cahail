@@ -1,9 +1,9 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import core from "@actions/core";
+import github from "@actions/github";
 
-const core = require("@actions/core");
-const github = require("@actions/github");
 const app = express();
 const port = 3000;
 
