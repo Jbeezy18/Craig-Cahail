@@ -55,17 +55,13 @@ app.get("/news", (req, res) => {
 //         const transporter = nodemailer.createTransport({
 //             service : 'Yahoo',
 //             auth : {
-//                 user : 'CraigCahailBookings@yahoo.com',
-//                 pass : 'HouseMusic23',
+//                 user : ,
 //             },
-//             host : 'smtp.mail.yahoo.com',
-//             port : 465,
-//             secure : true,
+//             host : '
 //         });
 
 //         const mail_option = {
-//             from : 'CraigCahailBookings@yahoo.com',
-//             to : 'Justinpoeh@gmail.com',
+//             from :
 //             subject : 'Booking Inquiry',
 //             text : req.body.message
 //         };
