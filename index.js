@@ -42,10 +42,11 @@ app.get("/success", (req, res) => {
 app.post("/send", 
     [
         check('name').notEmpty().withMessage('Name is required'),
-        check('email').isEmail().withMessage('Invalid email address'),
-        check('phone').isMobilePhone().isLength({ min: 10, max: 10 }).withMessage('Oops...Please try another phone number'),
+        check('email').notEmpty().withMessage('Invalid email address'),
+        check('phone').notEmpty().withMessage('Please enter valid phone number'),
         check('message').notEmpty().withMessage('Message required')
     ], (req, res) => {
+        
 
     const errors = validationResult(req);
 
@@ -63,7 +64,7 @@ app.post("/send",
             EMAIL: ${mail_email},
     
             MESSAGE: ${mail_message}`
-    
+
     );
         const nm_user = process.env.NM_USER;
         const nm_pass = process.env.NM_PASS;
@@ -92,7 +93,7 @@ app.post("/send",
             to : cc_email,
             subject : nm_sub,
             text : emailMessage,
-                    
+
         },
 
         (errors, info) => {
@@ -102,16 +103,12 @@ app.post("/send",
 
             } else {
                 res.redirect('/success');
-            }
+            };
         });
-        
+
     };    
 });    
 
-app.get('/success', (req, res) => {
-    res.render('<h1>Your Message was Successfully Sent! We Will Get Back To You ASAP!</h1>');
-});
-
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
 });
